@@ -5,6 +5,8 @@ import SignUp from './components/signup/SignUp' //Sign Up screen
 import Main from './components/main/Main' //Main screen
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 
+import { DrawerNavigator } from './components/main/Main';
+
 
 export default class App extends React.Component {
   render() {
@@ -30,7 +32,7 @@ const AppNavigator = createStackNavigator({ //Stack navigator works as a history
     screen: SignUp
   },
   Main: {
-    screen: Main,
+    screen: DrawerNavigator,
     navigationOptions: {
       title: 'Home',
       header: null //this will hide the header

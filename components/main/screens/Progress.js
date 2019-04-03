@@ -3,17 +3,20 @@ import {
     View,
     Text,
     StatusBar,
-    SafeAreaView,
     Button
 } from 'react-native';
+
+import {
+  SafeAreaView
+} from 'react-navigation';
 
 import Header from './shared/Header';
 
 export default class Progress extends React.Component {
     render() {
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <StatusBar barStyle="default" />
+        <View style={{ flex: 1 }}>
+            <StatusBar barStyle="default" />
             <SafeAreaView
             style={{ flex: 1 }}
             forceInset={{ horizontal: 'always', top: 'always' }}

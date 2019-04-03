@@ -24,6 +24,18 @@ const SimpleTabs = createMaterialTopTabNavigator({
     Daily: DailyScreen,
     Weekly: WeeklyScreen,
     Monthly: MonthlyScreen,
+}, {
+    tabBarOptions:{
+        activeTintColor: '#fefefe',
+        labelStyle: {
+            fontSize: 16,
+            color: '#000000',
+            fontWeight: 'bold',
+        },    
+        style: {
+            backgroundColor: '#ffffff' // TabBar background
+        }
+    }
 });
 
 class Journal extends React.Component {
@@ -48,6 +60,7 @@ class Journal extends React.Component {
         const activeRoute = routes[index];
         let bottom = null;
         if (activeRoute.routeName !== 'Home') {
+            /*
         bottom = (
             <View style={{ height: 50, borderTopWidth: StyleSheet.hairlineWidth, alignSelf: "flex-end" }}>
             <Button
@@ -58,6 +71,7 @@ class Journal extends React.Component {
             />
             </View>
         );
+        */
         }
         return (
         <View style={{ flex: 1 }}>
