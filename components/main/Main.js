@@ -27,6 +27,8 @@ import Settings from './screens/Settings';
 
 import OverView from './drawers/OverView';
 
+
+
 const TabNavigator = createBottomTabNavigator({
     Journal: { screen: Journal },
     Progress: { screen: Progress },
@@ -34,9 +36,10 @@ const TabNavigator = createBottomTabNavigator({
     Settings: { screen: Settings },
 });
 
-
 const DrawerNavigator = createDrawerNavigator({
-    TabNavigator : { screen: TabNavigator}
+    TabNavigator : {screen: TabNavigator }
+}, {
+    drawerLockMode: 'locked-closed'
 });
 
 module.exports = {

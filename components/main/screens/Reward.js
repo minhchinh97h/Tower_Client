@@ -23,10 +23,9 @@ export default class Reward extends React.Component {
             >
             <Header
                 openDrawer={this.props.navigation.openDrawer}
+                currentNavigationState={this.props.navigation.state}
             />
-            <Button 
-                    onPress={() => { this.props.navigation.openDrawer();}}
-                    title="Go to OverView"></Button>
+            <Text>Reward</Text>
             </SafeAreaView>
         </View>
       );

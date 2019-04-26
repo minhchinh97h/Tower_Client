@@ -48,7 +48,7 @@ class Journal extends React.Component {
               console.log('Journal focused');
             }
         );
-
+            console.log(this.props.navigation);
     }     
 
     componentWillUpdate() {
@@ -82,11 +82,9 @@ class Journal extends React.Component {
             >
             <Header
                 openDrawer={this.props.navigation.openDrawer}
+                currentNavigationState={this.props.navigation.state}
             />
             <SimpleTabs navigation={navigation} />
-            <Button 
-                    onPress={() => { this.props.navigation.openDrawer();}}
-                    title="Go to OverView"></Button>
             </SafeAreaView>
             {bottom}
         </View>

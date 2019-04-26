@@ -51,16 +51,38 @@ export default class Header extends React.Component {
         display: this.state.dropdownMenuVisible ? 'flex' : 'none',
         width: 200,
         height: 300,
-        borderWidth: 1,
-        borderColor: 'red',
-        backgroundColor: 'white'
+        borderWidth: 2,
+        borderColor: '#ddd',
+        backgroundColor: 'white',
+        borderRadius: 4,
+        zIndex: 2,
+        marginLeft: 200,
+        bottom: -300,
+        
+        padding: 16,
         }}>
-        <Text>Hey I am here</Text>
+        <Text style={{marginBottom: 8}}>Hey I am here</Text>
+        <Text style={{marginBottom: 8}}>Me too</Text>
+        <Text style={{marginBottom: 8}}>DMC</Text>
+        <Text style={{borderTopWidth: 1, borderColor:'#ddd'}}>DCM</Text>
       </View>
     )
     render() {
       return (
-        <View style={{justifyContent: 'space-between',flexDirection: 'row', height: 52, padding:8}}>
+        <View style={{
+          zIndex: 1,
+          justifyContent: 'space-between',
+          flexDirection: 'row-reverse', 
+          height: 52, 
+          padding:8, 
+          borderWidth: 1,
+          borderRadius: 2,
+          borderColor: '#ddd',
+          borderBottomWidth: 0,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.8,
+          shadowRadius: 2}}>
         <Modal
           animationType="slide"
           transparent={false}
@@ -81,13 +103,7 @@ export default class Header extends React.Component {
             </View>
           </View>
         </Modal>
-        <TouchableHighlight onPress={() => this.props.openDrawer()}>
-          <Image
-              onPress={() => this.props.openDrawer()}
-              source={require('./Hamburger_icon.png')}
-              style={[styles.icon, {tintColor: 'black'}]}
-          />
-        </TouchableHighlight>
+        
         <TouchableHighlight onPress={this.toggleDropdownMenuVisible}>
           <Image
               onPress={this.toggleDropdownMenuVisible}
@@ -95,6 +111,15 @@ export default class Header extends React.Component {
               style={[styles.icon, {tintColor: 'black'}]}
           />
         </TouchableHighlight>
+        {
+          this.props.currentNavigationState.routeName === "Journal" && <TouchableHighlight onPress={() => this.props.openDrawer()}>
+            <Image
+                onPress={() => this.props.openDrawer()}
+                source={require('./Hamburger_icon.png')}
+                style={[styles.icon, {tintColor: 'black'}]}
+            />
+          </TouchableHighlight>
+        }
         { this.state.dropdownMenuVisible && this.dropDownMenu}
         
         </View>

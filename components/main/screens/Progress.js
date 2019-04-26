@@ -13,6 +13,11 @@ import {
 import Header from './shared/Header';
 
 export default class Progress extends React.Component {
+  
+    componentDidMount = () => {
+      this.props.navigation.actions.openDrawer = () => {};
+      console.log(this.props.navigation);
+    }
     render() {
       return (
         <View style={{ flex: 1 }}>
@@ -23,10 +28,9 @@ export default class Progress extends React.Component {
             >
             <Header
                 openDrawer={this.props.navigation.openDrawer}
+                currentNavigationState={this.props.navigation.state}
             />
-            <Button 
-                    onPress={() => { this.props.navigation.openDrawer();}}
-                    title="Go to OverView"></Button>
+            <Text>Progress</Text>
             </SafeAreaView>
         </View>
       );
