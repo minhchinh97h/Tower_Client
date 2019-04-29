@@ -2,9 +2,9 @@
   "webpackServerPort": null,
   "expoServerNgrokUrl": "https://fn-29n.anonymous.tower-client.exp.direct",
   "packagerNgrokUrl": "https://packager.fn-29n.anonymous.tower-client.exp.direct",
-  "ngrokPid": 9748,
+  "ngrokPid": 20296,
   "packagerPort": 19001,
-  "packagerPid": 15456,
+  "packagerPid": 3756,
   "devToolsPort": 19002,
   "expoServerPort": 19000
 }

@@ -27,6 +27,7 @@ import Settings from './screens/Settings';
 
 import OverView from './drawers/OverView';
 
+import DrawerNavComponent from './drawers/DrawerNavComponent';
 
 
 const TabNavigator = createBottomTabNavigator({
@@ -39,7 +40,8 @@ const TabNavigator = createBottomTabNavigator({
 const DrawerNavigator = createDrawerNavigator({
     TabNavigator : {screen: TabNavigator }
 }, {
-    drawerLockMode: 'locked-closed'
+    drawerLockMode: 'locked-closed',
+    contentComponent: DrawerNavComponent
 });
 
 module.exports = {
