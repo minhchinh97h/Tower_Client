@@ -35,7 +35,16 @@ const TabNavigator = createBottomTabNavigator({
     Progress: { screen: Progress },
     Reward: { screen: Reward },
     Settings: { screen: Settings },
-});
+},
+{
+    initialRouteName: "Journal",
+    tabBarOptions: {
+        style: {
+            zIndex: 35
+        },
+    }
+}
+);
 
 const DrawerNavigator = createDrawerNavigator({
     TabNavigator : {screen: TabNavigator }

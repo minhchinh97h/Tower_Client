@@ -47,18 +47,18 @@ export default class Header extends React.Component {
   
     dropDownMenu = (
       <View style={{
-        position: 'absolute', 
         display: this.state.dropdownMenuVisible ? 'flex' : 'none',
+        flex: 2,
+        position: 'absolute',
         width: 200,
         height: 300,
         borderWidth: 2,
         borderColor: '#ddd',
         backgroundColor: 'white',
         borderRadius: 4,
-        zIndex: 2,
-        marginLeft: 200,
         bottom: -300,
-        
+        left: 100,
+        alignSelf: "flex-start",
         padding: 16,
         }}>
         <Text style={{marginBottom: 8}}>Hey I am here</Text>

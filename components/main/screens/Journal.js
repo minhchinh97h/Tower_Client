@@ -5,7 +5,8 @@ import {
     StyleSheet,
     Text,
     View,
-    Button
+    Button,
+    TouchableHighlight
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
@@ -58,7 +59,36 @@ class Journal extends React.Component {
         const { navigation } = this.props;
         const { routes, index } = navigation.state;
         const activeRoute = routes[index];
-        let bottom = null;
+        let bottom = (
+            <TouchableHighlight style={{
+                zIndex: 1011,
+                marginBottom: 8,
+                //position: 'absolute',
+                bottom: 0
+            }}>
+                <View style={{
+                    width: 64,
+                    height: 64,
+                    backgroundColor: 'grey',
+                    borderRadius: 32,
+                    shadowOffset:{  width: 50,  height: 50,  },
+                    shadowColor: 'black',
+                    shadowOpacity: 0.75,
+                    alignSelf: "center",
+                    elevation: 5
+                }}>
+                    <Text style={{
+                        textAlign: 'center',
+                        textAlignVertical: 'center',
+                        fontSize: 24,
+                        color: 'white',
+                        height:64
+                    }}>
+                        +
+                    </Text>
+                </View>
+            </TouchableHighlight>
+        );
         if (activeRoute.routeName !== 'Home') {
             /*
         bottom = (
