@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {NavigationActions} from 'react-navigation';
-import { Text, View, StyleSheet, ImageBackground, Image, TextInput } from 'react-native'
+import { Text, View, StyleSheet, ImageBackground, Image, TextInput, ScrollView } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 export default class drawerContentComponents extends Component {
@@ -16,10 +16,13 @@ export default class drawerContentComponents extends Component {
   render() {
       let bottom = (
         <View style={{
-            bottom:0
+            alignSelf:"flex-end",
+            flexDirection: "row",
+            paddingLeft: 16
         }}>
-            <TextInput></TextInput>
+            
             <FontAwesome5 name={'search'} style={styles.icon}></FontAwesome5>
+            <TextInput style={{height: 32,  width: 260}} placeholder="Search"/>
         </View>
       )
     return (
@@ -37,7 +40,7 @@ export default class drawerContentComponents extends Component {
                     <Text style={styles.headerText}>User Name</Text>
                 </ImageBackground>
             </View>
-            <View style={styles.screenContainer}>
+            <ScrollView style={styles.screenContainer}>
                 <View style={styles.screenStyle} onPress={this.navigateToScreen('TabNavigator')}>
                     <FontAwesome5 name={'envelope'} style={styles.icon}/>
                     <Text>Inbox</Text>
@@ -57,6 +60,33 @@ export default class drawerContentComponents extends Component {
                 </View>
                 <View style={styles.blackBar}></View>
                 <View style={styles.screenStyle} onPress={this.navigateToScreen('TabNavigator')}>
+                    <FontAwesome5 name={'folder'} style={styles.icon}/>
+                    <Text>Folder 1</Text>
+                </View>
+                <View style={styles.screenStyle} onPress={this.navigateToScreen('TabNavigator')}>
+                    <FontAwesome5 name={'folder'} style={styles.icon}/>
+                    <Text>Folder 2</Text>
+                </View>
+                <View style={styles.blackBar}></View>
+                <View style={styles.screenStyle} onPress={this.navigateToScreen('TabNavigator')}>
+                    <FontAwesome5 name={'folder'} style={styles.icon}/>
+                    <Text>Folder 1</Text>
+                </View>
+                <View style={styles.screenStyle} onPress={this.navigateToScreen('TabNavigator')}>
+                    <FontAwesome5 name={'folder'} style={styles.icon}/>
+                    <Text>Folder 2</Text>
+                </View>
+                <View style={styles.blackBar}></View>
+                <View style={styles.screenStyle} onPress={this.navigateToScreen('TabNavigator')}>
+                    <FontAwesome5 name={'folder'} style={styles.icon}/>
+                    <Text>Folder 1</Text>
+                </View>
+                <View style={styles.screenStyle} onPress={this.navigateToScreen('TabNavigator')}>
+                    <FontAwesome5 name={'folder'} style={styles.icon}/>
+                    <Text>Folder 2</Text>
+                </View>
+                <View style={styles.blackBar}></View>
+                <View style={styles.screenStyle} onPress={this.navigateToScreen('TabNavigator')}>
                     <FontAwesome5 name={'plus'} style={styles.icon}/>
                     <Text>Add list</Text>
                 </View>
@@ -64,10 +94,11 @@ export default class drawerContentComponents extends Component {
                     <FontAwesome5 name={'wrench'} style={styles.icon}/>
                     <Text>Manage list</Text>
                 </View>
-                {
-                    bottom
-                }
-            </View>
+                
+            </ScrollView>
+            {
+                bottom
+            }
         </View>
     
     )
@@ -76,7 +107,7 @@ export default class drawerContentComponents extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
+        alignItems: 'center'
     },
     headerContainer: {
         height: 160,
@@ -89,10 +120,12 @@ const styles = StyleSheet.create({
         marginTop: 16
     },
     screenContainer: {
-        paddingTop: 20
+        height: 400,
+        width: 280
     },
     screenStyle: {
         height: 30,
+        paddingLeft: 16,
         marginTop: 4,
         marginBottom: 4,
         flexDirection: 'row',
@@ -107,7 +140,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         width: 240,
         marginTop: 8,
-        marginBottom: 8
+        marginBottom: 8,
+        marginLeft: 12
     },
     icon:{
         fontSize: 24,
