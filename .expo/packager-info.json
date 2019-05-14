@@ -1,15 +1,10 @@
 {
   "webpackServerPort": null,
-  "expoServerNgrokUrl": "https://fn-29n.anonymous.tower-client.exp.direct",
-  "packagerNgrokUrl": "https://packager.fn-29n.anonymous.tower-client.exp.direct",
-  "ngrokPid": 33518,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 7848,
-  "expoServerNgrokUrl": "https://fn-29n.minhchinh97h.tower-client.exp.direct",
-  "packagerNgrokUrl": "https://packager.fn-29n.minhchinh97h.tower-client.exp.direct",
-  "ngrokPid": 14004,
-  "devToolsPort": 19002,
-  "webpackServerPort": null
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null
 }

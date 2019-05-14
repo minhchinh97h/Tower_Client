@@ -3,7 +3,7 @@ import {NavigationActions} from 'react-navigation';
 import { Text, View, StyleSheet, ImageBackground, Image, TextInput, ScrollView } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-export default class drawerContentComponents extends Component {
+export default class DrawerNavComponent extends Component {
 
     navigateToScreen = ( route ) =>(
         () => {
