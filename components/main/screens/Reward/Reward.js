@@ -10,7 +10,7 @@ import {
   SafeAreaView
 } from 'react-navigation';
 
-import Header from './../../shared/Header'
+import Header from './../../header/Header'
 
 export default class Reward extends React.Component {
     render() {

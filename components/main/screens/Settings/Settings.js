@@ -10,7 +10,7 @@ export default class Settings extends React.Component {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Image
-            source={require('./../shared/icon.png')}
+            source={require('./../../header/icon.png')}
             style={{
               width: 100,
               height: 100,
