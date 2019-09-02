@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Goal from './Goal'
-import { updateTask } from '../actions/updateTask'
+import { updateTask } from '../actions/taskAction'
 
 let action_type = ""
 

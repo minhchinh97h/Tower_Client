@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { updateHeaderText } from '../../actions/updateHeaderText'
+import { updateHeaderText } from '../../actions/otherAction'
 import DayFlatlist from './DayFlatlist'
 
 const mapStateToProps = (state, ownProps) => {

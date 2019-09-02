@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Repeat from './Repeat'
-import { updateTask } from '../actions/updateTask'
+import { updateTask } from '../actions/taskAction'
 
 let action_type = ""
 

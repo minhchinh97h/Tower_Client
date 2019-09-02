@@ -73,8 +73,8 @@ export default class TaskCard extends React.PureComponent {
                     else {
                         data.id = task.id
                         data[day_timestamp] = {
-                            max: task.goal.max,
-                            current: currentGoal + 1
+                            current: currentGoal + 1,
+                            category: task.category
                         }
                     }
                 }
@@ -99,7 +99,7 @@ export default class TaskCard extends React.PureComponent {
                     else {
                         data.id = task.id
                         data[week_timestamp] = {
-                            max: task.goal.max,
+                            category: task.category,
                             current: currentGoal + 1
                         }
                     }
@@ -125,6 +125,7 @@ export default class TaskCard extends React.PureComponent {
                     else {
                         data.id = task.id
                         data[month_timestamp] = {
+                            category: task.category,
                             current: currentGoal + 1
                         }
                     }

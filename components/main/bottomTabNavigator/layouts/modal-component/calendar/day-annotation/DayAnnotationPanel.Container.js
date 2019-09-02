@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {updateTask} from '../../../../../../shared/actions/updateTask'
+import {updateTask} from '../../../../../../shared/actions/taskAction'
 import DayAnnotationPanel from './DayAnnotationPanel'
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

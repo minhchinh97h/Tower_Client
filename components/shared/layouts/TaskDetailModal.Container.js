@@ -1,7 +1,12 @@
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import TaskDetailModal from './TaskDetailModal'
-import {updateTask} from '../actions/updateTask'
-import {deleteTask} from '../actions/deleteTask'
+
+import {
+    updateTask,
+    deleteTask
+} from '../actions/taskAction'
+
+import { updateCategory } from '../actions/categoryAction'
 
 const mapStateToProps = (state) => ({
     categories: state.categories,
@@ -13,6 +18,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
     deleteTask: (type, data) => dispatch(deleteTask(type, data)),
     deleteCompletedTask: (type, data) => dispatch(deleteTask(type, data)),
+    updateCategory: (id, data) => dispatch(updateCategory(id, data))
 })
 
 export default connect(

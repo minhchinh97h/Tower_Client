@@ -41,10 +41,6 @@ export default class TaskDetailModal extends Component {
         toggle_delete: false,
     }
 
-    // setModalVisible = (visible) => {
-    //     this.setState({ modalVisible: visible });
-    // }
-
     toggleEdit = (visible) => {
         this.setState(() => ({ isEditing: visible }));
     }
@@ -134,18 +130,6 @@ export default class TaskDetailModal extends Component {
         }
     }
 
-    // openModal = () => {
-    //     this.refs.taskInfoModal.open()
-    // }
-
-    // closeModal = () => {
-    //     this.refs.taskInfoModal.close()
-    // }
-
-    // onClose = () => {
-    //     this.toggleEdit(false)
-    //     this.props.closeModal()
-    // }
 
     dismissModal = () => {
         this.props.closeModal()
@@ -181,16 +165,6 @@ export default class TaskDetailModal extends Component {
 
     render() {
         return (
-            // <Modal
-            //     style={{ marginTop: 50, borderRadius: 10 }}
-            //     backButtonClose={true}
-            //     coverScreen={true}
-            //     isOpen={this.props.isOpen}
-            //     ref={'taskInfoModal'}
-            //     swipeToClose={true}
-            //     swipeArea={500}
-            //     onClosed={this.onClose}
-            // >
             <RNModal
                 transparent={true}
             >
@@ -441,6 +415,7 @@ export default class TaskDetailModal extends Component {
                                 priorities={this.props.priorities}
                                 hideAction={this.toggleEdit}
                                 updateEdittingTask={this.props.updateEdittingTask}
+                                updateCategory={this.props.updateCategory}
                                 type={this.props.type}
                             />
                         }
@@ -469,6 +444,8 @@ class EditDetails extends React.PureComponent {
     priority = ""
     repeat = ""
     goal = ""
+
+    category_key = ""
 
     state = {
         title_value: "",
@@ -554,7 +531,20 @@ class EditDetails extends React.PureComponent {
     }
 
     save = () => {
+        let new_category_key = this.edit_task.category
+
         this.props.updateEdittingTask(this.edit_task)
+
+        //Decrease old category's quantity
+        let old_category_data = { ...this.props.categories[this.category_key] }
+        old_category_data.quantity -= 1
+
+        //Increase new category's quantity
+        let new_category_data = { ...this.props.categories[new_category_key] }
+        new_category_data.quantity += 1
+
+        this.props.updateCategory(this.category_key, old_category_data)
+        this.props.updateCategory(new_category_key, new_category_data)
 
         this.cancel()
     }
@@ -617,6 +607,8 @@ class EditDetails extends React.PureComponent {
 
     componentDidMount() {
         this.edit_task = this.props.task_data
+
+        this.category_key = this.edit_task.category
 
         let { title, description } = this.edit_task
 

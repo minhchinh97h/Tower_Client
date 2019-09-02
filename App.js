@@ -1,10 +1,11 @@
 import React from 'react';
 import MainNavigator from './components/main/Main' //Main screen
+import { Dimensions } from 'react-native'
 import { createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
-import Drawer from './components/drawer/Drawer'
+import Drawer from './components/drawer/Drawer.Container'
 import Header from './components/main/header/Header.Container'
 
 import * as FileSystem from 'expo-file-system';
@@ -47,7 +48,7 @@ export default class App extends React.Component {
           }
         })
       )
-      
+
       let readData = await FileSystem.readAsStringAsync(filePath)
 
       categories = JSON.parse(readData)
@@ -60,7 +61,7 @@ export default class App extends React.Component {
   loadCurrentTaskFromFile = async (filePath) => {
     let info = await FileSystem.getInfoAsync(filePath)
 
-    if(info.exists){
+    if (info.exists) {
       let readData = await FileSystem.readAsStringAsync(filePath)
 
       currentTask = JSON.parse(readData)
@@ -68,7 +69,7 @@ export default class App extends React.Component {
       this.initialState = { ... this.initialState, ... { currentTask } }
     }
 
-    else{
+    else {
       let writtenData = await FileSystem.writeAsStringAsync(
         filePath,
         JSON.stringify({
@@ -159,10 +160,13 @@ const ContentNavigator = createStackNavigator(
 )
 
 const drawerNavigator = createDrawerNavigator({
-  ContentNavigator: ContentNavigator
+  ContentNavigator: ContentNavigator,
 }, {
     drawerLockMode: 'locked-closed',
-    contentComponent: Drawer
+    contentComponent: Drawer,
+    drawerType: 'slide',
+    drawerWidth: Dimensions.get("window").width * 0.80,
+    overlayColor: "gray"
   })
 
 const AppContainer = createAppContainer(drawerNavigator) //return a React component, which is to wrap the stack navigator 

@@ -1,14 +1,32 @@
-import {combineReducers} from 'redux'
-import {currentRoute} from './currentRoute'
-import {currentWeekInMonth} from './currentWeekInMonth'
-import {day_tasks, week_tasks, month_tasks, completed_day_tasks, completed_week_tasks, completed_month_tasks} from './tasks'
-import {categories} from './categories'
-import {priorities} from './priorities'
-import {currentDayTask, currentWeekTask, currentMonthTask} from './currentTasks'
-import {currentAnnotation} from './currentAnnotation'
-import {headerText, headerPressed} from './headerText'
-import {addTaskDescription, addTaskTitle} from './addTaskPanel'
+import { combineReducers } from 'redux'
+import { priorities } from './priorityReducer'
 
+import {
+    currentChosenCategory,
+    categories
+} from './categoryReducer'
+
+import {
+    completed_day_tasks,
+    completed_week_tasks,
+    completed_month_tasks,
+    currentDayTask,
+    currentMonthTask,
+    currentWeekTask,
+    day_tasks,
+    month_tasks,
+    week_tasks,
+} from './taskReducer'
+
+import {
+    addTaskDescription,
+    addTaskTitle,
+    currentAnnotation,
+    currentRoute,
+    currentWeekInMonth,
+    headerPressed,
+    headerText
+} from './otherReducer'
 
 const rootReducer = combineReducers({
     currentRoute,
@@ -35,7 +53,9 @@ const rootReducer = combineReducers({
     headerPressed,
 
     addTaskDescription,
-    addTaskTitle
+    addTaskTitle,
+
+    currentChosenCategory
 })
 
 export default rootReducer

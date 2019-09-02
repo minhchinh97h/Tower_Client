@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { updateTask } from '../actions/updateTask'
+import { updateTask } from '../actions/taskAction'
 import TaskCard from './TaskCard'
 
 const mapStateToProps = (state, ownProps) => {

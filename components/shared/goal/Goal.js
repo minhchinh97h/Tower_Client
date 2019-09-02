@@ -63,7 +63,6 @@ class GoalPerTimesRow extends React.PureComponent {
     _updateTask = (value) => {
         this.data = {
             max: parseInt(value),
-            current: 0,
         }
 
         this.props.updateTask({ goal: this.data })

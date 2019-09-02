@@ -117,24 +117,216 @@ const priority = {
 
 }
 
-const day_completed = {
-    task_id_0: {
-        year: {
-            month: day
-        }
+
+const day_tasks = {
+    task_id: {
+        id: task_id, //use uuid()
+        title: 'Task 1',
+        description: "description",
+        createdAt: 11111111,
+        startTime: 1111111,
+        trackingTime: 3333333, // currently not used (*)
+        type: 'day',
+        category: 'cate_0', //using category id
+        repeat: {
+            type: "daily",
+            interval: {
+                value: 2 // every 2 days
+            },
+
+            /* OR */
+            type: "weekly",
+            interval: {
+                value: 2, // every 2 weeks
+                daysInWeek: [0, 1, 2, 3] // indexes for days in a week. Sunday = 0, Monday = 1, Tuesday = 2
+            },
+
+            /* OR */
+            type: "monthly",
+            interval: {
+                value: 2 // every 2 months
+            },
+        },
+
+        goal: {
+            max: 5,
+        },
+
+        end: {
+            type: "never",
+
+            /* OR */
+            type: "on",
+            endAt: 1212121212, // timestamp of ending date.
+
+
+            /* OR */
+            type: "after",
+            occurrence: 5 // If users set the repetition of a task to be repeated every 2 days. This value will determine
+            // that the task will be expired in 10 days.
+        },
+
+        //startTime = new Date(year, month, day).getTime()
+        schedule: {
+            year: 2019,
+            month: 6,
+            day: 26,
+        },
+
+        priority: {
+            value: "pri_01", //use priority id
+            reward: 50
+        },
     }
 }
 
-const week_completed = {
-    task_id_1: {
-        year: {
-            week: month
-        }
+const day_completed_tasks = {
+    task_id: {
+        id: task_id,
+        // The completion_timestamp_x will be calculated based on a rule, involving the day, month, year of the completion time.
+        completion_timestamp_1: {
+            current: 1 //the current goal value of the task. For example, a task has a goal of 5 times completion each occurrence. The value shows that
+                        // at the time of completion_timestamp_1, the task has been completed 1 time (1/5)
+        },
+
+        completion_timestamp_2: {
+            current: 1
+        },
     }
 }
 
-const month_completed = {
-    task_id_2: {
-        year: month
+const week_tasks = {
+    task_id: {
+        id: task_id, //use uuid()
+        title: 'Task 1',
+        description: "description",
+        createdAt: 11111111,
+        startTime: 1111111,
+        trackingTime: 3333333, // currently not used (*)
+        type: 'day',
+        category: 'cate_0', //using category id
+        repeat: {
+            type: "weekly-w",
+            interval: {
+                value: 2 // every 2 weeks
+            },
+
+            /* OR */
+            type: "monthly-w",
+            interval: {
+                value: 2 // every 2 months
+            }
+        },
+
+        goal: {
+            max: 5,
+        },
+
+        end: {
+            type: "never",
+
+            /* OR */
+            type: "on",
+            endAt: 1212121212, // timestamp of ending date.
+
+
+            /* OR */
+            type: "after",
+            occurrence: 5 // If users set the repetition of a task to be repeated every 2 days. This value will determine
+            // that the task will be expired in 10 days.
+        },
+
+        schedule: {
+            year: 2019,
+            month: 6,
+            day: 26,
+            week: 35,
+            noWeekInMonth: 3
+        },
+
+        priority: {
+            value: "pri_01", //use priority id
+            reward: 50
+        },
+    },
+}
+
+const week_completed_tasks = {
+    task_id: {
+        id: task_id,
+        // The completion_timestamp_x will be calculated based on a rule, involving the first monday of the week, month, year of the completion time.
+        completion_timestamp_1: {
+            current: 1 //the current goal value of the task. For example, a task has a goal of 5 times completion each occurrence. The value shows that
+                        // at the time of completion_timestamp_1, the task has been completed 1 time (1/5)
+        },
+
+        completion_timestamp_2: {
+            current: 1
+        },
+    }
+}
+
+const month_task = {
+    task_id: {
+        id: task_id, //use uuid()
+        title: 'Task 1',
+        description: "description",
+        createdAt: 11111111,
+        startTime: 1111111,
+        trackingTime: 3333333, // currently not used (*)
+        type: 'day',
+        category: 'cate_0', //using category id
+        repeat: {
+            type: "monthly-m",
+            interval: {
+                value: 2 // every 2 months
+            }
+        },
+
+        goal: {
+            max: 5,
+        },
+
+        end: {
+            type: "never",
+
+            /* OR */
+            type: "on",
+            endAt: 1212121212, // timestamp of ending date.
+
+
+            /* OR */
+            type: "after",
+            occurrence: 5 // If users set the repetition of a task to be repeated every 2 days. This value will determine
+            // that the task will be expired in 10 days.
+        },
+
+        schedule: {
+            year: 2019,
+            month: 6,
+            day: 26,
+            week: 35,
+            noWeekInMonth: 3
+        },
+
+        priority: {
+            value: "pri_01", //use priority id
+            reward: 50
+        },
+    },
+}
+
+const month_completed_tasks = {
+    task_id: {
+        id: task_id,
+        // The completion_timestamp_x will be calculated based on a rule, involving the first monday of the month, year of the completion time.
+        completion_timestamp_1: {
+            current: 1 //the current goal value of the task. For example, a task has a goal of 5 times completion each occurrence. The value shows that
+                        // at the time of completion_timestamp_1, the task has been completed 1 time (1/5)
+        },
+
+        completion_timestamp_2: {
+            current: 1
+        },
     }
 }

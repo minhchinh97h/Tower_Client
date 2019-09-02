@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {updateTask} from '../../../../../../shared/actions/updateTask'
+import {updateTask} from '../../../../../../shared/actions/taskAction'
 import WeekAnnotationPanel from './WeekAnnotationPanel'
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
