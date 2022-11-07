@@ -1,2 +1,2 @@
-# Tower_Client
-Client-side source code of Tower project
+# Quint App
+Client-side source code of Quint App project
