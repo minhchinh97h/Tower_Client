@@ -39,7 +39,7 @@
     "metro-config": "^0.57.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
-    "react-native": "0.59.10",
+    "react-native": "0.71.3",
     "react-native-collapsible": "^1.5.1",
     "react-native-elements": "^1.2.6",
     "react-native-gesture-handler": "~1.3.0",
